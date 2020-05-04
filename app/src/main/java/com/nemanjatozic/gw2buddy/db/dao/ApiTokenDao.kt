@@ -12,4 +12,7 @@ interface ApiTokenDao {
 
     @Query("select * from api_token where token=:token")
     fun findByToken(token: String): ApiTokenEntity
+
+    @Query("select count(*) from api_token")
+    fun count(): Int
 }
