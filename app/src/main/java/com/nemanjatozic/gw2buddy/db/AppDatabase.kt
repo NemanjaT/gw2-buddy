@@ -23,7 +23,7 @@ abstract class AppDatabase protected constructor(): RoomDatabase() {
         fun getInstance(context: Context) : AppDatabase {
             if (!this::INSTANCE.isInitialized) {
                 INSTANCE = Room
-                    .databaseBuilder(context.applicationContext, AppDatabase::class.java, DB_FILE_NAME)
+                    .databaseBuilder(context, AppDatabase::class.java, DB_FILE_NAME)
                     .build()
             }
             return INSTANCE
